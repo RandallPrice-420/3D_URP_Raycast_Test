@@ -9,7 +9,7 @@
                     "name": "Mouse Left Click",
                     "type": "Button",
                     "id": "db06e742-e2d3-4534-a508-c71faa945296",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false

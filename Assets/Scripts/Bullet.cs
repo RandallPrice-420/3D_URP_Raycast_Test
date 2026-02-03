@@ -19,12 +19,12 @@ public class Bullet : Singleton<Bullet>
 
 
     // -------------------------------------------------------------------------
-    // Public Properties:
+    // Public Variables:
     // ------------------
     //   Speed
     // -------------------------------------------------------------------------
 
-    #region .  Public Properties  .
+    #region .  Public Variables  .
 
     public float Speed = 20f;
 
@@ -33,12 +33,12 @@ public class Bullet : Singleton<Bullet>
 
 
     // -------------------------------------------------------------------------
-    // Private Properties:
+    // Private Variables:
     // -------------------
     //   _rigidbody
     // -------------------------------------------------------------------------
 
-    #region .  Private Properties  .
+    #region .  Private Variables  .
 
     private Rigidbody _rigidbody;
 
@@ -97,7 +97,6 @@ public class Bullet : Singleton<Bullet>
     {
         if (otherCollision.gameObject.CompareTag("Enemy"))
         {
-            // Fire this event.
             BulletCollision?.Invoke(otherCollision);
 
             this.Die();

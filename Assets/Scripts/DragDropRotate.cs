@@ -24,14 +24,14 @@ public class DragDropRotate : MonoBehaviour
 
 
     // -------------------------------------------------------------------------
-    // Public Properties:
+    // Public Variables:
     // ------------------
     //   MouseDragPhysicsSpeed
     //   MouseDragSpeed
     //   RotateSpeed
     // -------------------------------------------------------------------------
 
-    #region .  Public Properties  .
+    #region .  Public Variables  .
 
     public float MouseDragPhysicsSpeed = 10.0f;
     public float MouseDragSpeed        = 0.1f;
@@ -40,15 +40,16 @@ public class DragDropRotate : MonoBehaviour
     #endregion
 
 
+
     // -------------------------------------------------------------------------
-    // SerializeField Properties:
+    // SerializeField Variables:
     // --------------------------
     //   _mouseLeftClick
     //   _mouseRightClick
     //   _mousePosition
     // -------------------------------------------------------------------------
 
-    #region .  SerializeField Properties  .
+    #region .  SerializeField Variables  .
 
     [Header("Input Actions")]
     [SerializeField] private InputAction _mouseLeftClick;
@@ -58,8 +59,9 @@ public class DragDropRotate : MonoBehaviour
     #endregion
 
 
+
     // -------------------------------------------------------------------------
-    // Private Properties:
+    // Private Variables:
     // -------------------
     //   _isDragging
     //   _isRotating
@@ -69,7 +71,7 @@ public class DragDropRotate : MonoBehaviour
     //   _velocity
     // -------------------------------------------------------------------------
 
-    #region .  Private Properties  .
+    #region .  Private Variables  .
 
     private Vector3  _currentMousePosition;
     private bool     _isDragging;
@@ -94,6 +96,7 @@ public class DragDropRotate : MonoBehaviour
         }
     }
     #endregion
+
 
 
     // -------------------------------------------------------------------------
@@ -202,14 +205,16 @@ public class DragDropRotate : MonoBehaviour
     // -------------------------------------------------------------------------
     private void OnDisable()
     {
-        this._mouseLeftClick.Disable();
-        this._mouseLeftClick.performed -= _ => { if (this._isClickedOn) DoMousePress("DragUpdate"); };
-        this._mouseLeftClick.canceled  -= _ => { this._isDragging = false; };
+        this._mouseLeftClick .performed -= _ => { if (this._isClickedOn) DoMousePress("DragUpdate"); };
+        this._mouseLeftClick .canceled  -= _ => { this._isDragging = false; };
+        this._mouseLeftClick .Disable();
 
-        this._mouseRightClick.canceled -= _ => { this._isRotating = false; };
+        this._mouseRightClick.performed -= _ => { if (this._isClickedOn) DoMousePress("RotateUpdate"); };
+        this._mouseRightClick.canceled  -= _ => { this._isRotating = false; };
+        this._mouseRightClick.Disable();
 
-        this._mousePosition.Disable();
-        this._mousePosition.performed  -= context => { this._currentMousePosition = context.ReadValue<Vector2>(); };
+        this._mousePosition  .performed -= context => { this._currentMousePosition = context.ReadValue<Vector2>(); };
+        this._mousePosition  .Disable();
 
     }   // OnDisable()
     #endregion
@@ -225,16 +230,16 @@ public class DragDropRotate : MonoBehaviour
 
     private void OnEnable()
     {
-        this._mouseLeftClick.Enable();
-        this._mouseLeftClick.performed  += _ => { if (this._isClickedOn) DoMousePress("DragUpdate"); };
-        this._mouseLeftClick.canceled   += _ => { this._isDragging = false; };
+        this._mouseLeftClick .Enable();
+        this._mouseLeftClick .performed += _ => { if (this._isClickedOn) DoMousePress("DragUpdate"); };
+        this._mouseLeftClick .canceled  += _ => { this._isDragging = false; };
 
         this._mouseRightClick.Enable();
         this._mouseRightClick.performed += _ => { if (this._isClickedOn) DoMousePress("RotateUpdate"); };
         this._mouseRightClick.canceled  += _ => { this._isRotating = false; };
 
-        this._mousePosition.Enable();
-        this._mousePosition.performed   += context => { this._currentMousePosition = context.ReadValue<Vector2>(); };
+        this._mousePosition  .Enable();
+        this._mousePosition  .performed += context => { this._currentMousePosition = context.ReadValue<Vector2>(); };
 
     }   // OnEnable()
     #endregion

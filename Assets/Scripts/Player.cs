@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // -------------------------------------------------------------------------
-    // Public Properties:
+    // Public Variables:
     // ------------------
     //   BulletPrefab
     //   DeathEffectPrefab
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     //   Speed
     // -------------------------------------------------------------------------
 
-    #region .  Public Properties  .
+    #region .  Public Variables  .
 
     public GameObject BulletPrefab;
     public GameObject DeathEffectPrefab;
@@ -32,8 +32,9 @@ public class Player : MonoBehaviour
     #endregion
 
 
+
     // -------------------------------------------------------------------------
-    // Private Properties:
+    // Private Variables:
     // -------------------
     //   _deathEffect
     //   _moveDirection
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
     //   //_isShooting
     // -------------------------------------------------------------------------
 
-    #region .  Private Properties  .
+    #region .  Private Variables  .
 
     private GameObject _deathEffect;
     private Vector3    _moveDirection;
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
     //private readonly bool _isShooting = false;
 
     #endregion
+
 
 
     // -------------------------------------------------------------------------
@@ -164,7 +166,7 @@ public class Player : MonoBehaviour
     }   // FixedUpdate()
     #endregion
 
-
+    
     #region .  Shoot()  .
     // -------------------------------------------------------------------------
     //   Method.......:  Shoot()
@@ -176,9 +178,9 @@ public class Player : MonoBehaviour
     {
         if (Physics.Raycast(this.MuzzleFlashFirePoint.position, this.transform.TransformDirection(this.FireDirection), out this._raycastHit, 100f))
         {
-            //Debug.DrawRay(this.MuzzleFlashFirePoint.position,
-            //              this.transform.TransformDirection(this.FireDirection) * this._raycastHit.distance,
-            //              Color.red);
+            Debug.DrawRay(this.MuzzleFlashFirePoint.position,
+                          this.transform.TransformDirection(this.FireDirection) * this._raycastHit.distance,
+                          Color.red);
 
             this._muzzleFlashEffect = Instantiate(this.MuzzleFlashPrefab, this.MuzzleFlashFirePoint.position, Quaternion.identity);
 

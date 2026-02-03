@@ -18,7 +18,7 @@ rem ----------------------------------------------------------------------------
 rem  Configure some git settings.
 rem ----------------------------------------------------------------------------
 set project_name=3D_URP_Raycast_Test
-set editor_version=2022.3.35f1
+set editor_version=2022.3.62f3
 set local_directory=C:/Repos/Unity/%editor_version%/%project_name%
 set remote_origin=https://github.com/RandallPrice-420/%project_name%
 
@@ -153,7 +153,7 @@ git commit -m "%commit_message%"
 git push -u origin master
 
 echo.
-echo - Changed files successfully committed and pushed to remote repository .
+echo - Changed files successfully committed and pushed to %remote_origin%
 echo.
 pause
 exit
