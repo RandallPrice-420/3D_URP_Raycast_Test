@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 314873710}
   - component: {fileID: 314873711}
   m_Layer: 0
-  m_Name: Enemy3
+  m_Name: Enemy_Blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 863373627}
   - component: {fileID: 863373630}
   m_Layer: 0
-  m_Name: Enemy4
+  m_Name: Enemy_Yellow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 1325884947}
   - component: {fileID: 1325884948}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy_Green
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 1433676691}
   - component: {fileID: 1433676692}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy_Red
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2449,7 +2449,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _mousePosition:
-    m_Name: 
+    m_Name: Mouse Position
     m_Type: 0
     m_ExpectedControlType: Vector2
     m_Id: 4710c47a-72fe-467f-8b25-06ecc8c459fe

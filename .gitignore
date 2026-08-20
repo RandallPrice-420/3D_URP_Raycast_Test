@@ -36,13 +36,13 @@
 **/ExportedObj/
 *.booproj
 .consulo/
-*.csproj
+# *.csproj
 *.mdb
 *.opendb
 *.pdb
 *.pidb
 *.rsuser
-*.sln
+# *.sln
 *.sln.docstates
 *.suo
 *.svd

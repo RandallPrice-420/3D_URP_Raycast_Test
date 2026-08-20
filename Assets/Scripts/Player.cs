@@ -105,13 +105,13 @@ public class Player : MonoBehaviour
 
         switch (otherCollision.gameObject.name)
         {
-            case "Enemy1":
-            case "Enemy2":
-            case "Enemy3":
+            case "Enemy_Red":
+            case "Enemy_Green":
+            case "Enemy_Blue":
                 SoundManager.Instance.PlaySound($"Pop_{UnityEngine.Random.Range(1, 8)}");
                 break;
 
-            case "Enemy4":
+            case "Enemy_Yellow":
                 SoundManager.Instance.PlaySound("Explosion_1");
                 break;
         }
